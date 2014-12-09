@@ -20,7 +20,6 @@ public class Homem extends Thread {
 		for (int i = 0; i < quantidade; i++) {
 			int valor = (int) (Math.random()* 12345);
 			conta.depositar(valor);
-			System.out.println("Depositado: "+ valor);
 			total += valor;	
 		}
 		System.out.println("Total Depositado pelo Homem: "+ total);	

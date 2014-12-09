@@ -16,6 +16,7 @@ public class Conta {
 
 		this.saldo += valor;
 		ok = true;
+		System.out.println("Depositado: "+ valor);
 		notifyAll();
 
 	}
@@ -31,6 +32,7 @@ public class Conta {
 		int saldoAnterior = saldo;
 		saldo = 0;
 		ok = false;
+		System.out.println("Sacado: " + saldoAnterior);
 		notifyAll();
 		return saldoAnterior;
 
