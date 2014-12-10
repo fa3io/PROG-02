@@ -8,5 +8,10 @@ public class Item {
 		this.id = id;
 		this.produtor = produtor;
 	}
+	
+	@Override
+	public String toString() {
+		return id +" - "+ produtor;
+	}
 
 }
