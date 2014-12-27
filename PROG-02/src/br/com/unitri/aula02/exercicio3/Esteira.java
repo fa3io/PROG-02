@@ -1,36 +1,28 @@
 package br.com.unitri.aula02.exercicio3;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Esteira {
 	
-	private Item[] esteira = new Item[5];
-	private boolean adicionou = false;
-	private boolean retirou = false;
+	private List<Item >esteira = new ArrayList<>();
 	
-	
-	public synchronized boolean add(Item item){
-		for (int i = 0; i < esteira.length; i++) {
-			if (esteira[i] == null) {
-				esteira[i] = item;
+	public  void add(Item item){	
+			if (esteira.size() < 5) {
+				esteira.add(item);
 				System.out.println("Item "+ item +" Adicionado.");
-				adicionou = true;
-				return adicionou;
-			}
-		}
-		if (!adicionou) {
+		}else {
 			System.out.println("Esteira cheia item Descartado !!");
 		}
-		return adicionou;
 	}
 	
-	public synchronized void remove(){
-		for (int i = 0; i < esteira.length; i++) {
-			if (!(esteira[i] == null)) {
-				esteira[i] = null;
-				retirou = true;
-				return;
-			}
-		}
-		if(!retirou){
+	public void remove(){
+		
+			if (esteira.size() > 0) {
+				Item item  = esteira.get(1);
+				esteira.remove(1);
+				System.out.println("Item " + item  + "removido..." );
+		}else{
 			System.out.println("Droga esteira vazia !!!");
 		}	
 	}
@@ -38,6 +30,8 @@ public class Esteira {
 		for (Item item : esteira) {
 			System.out.println(item);
 		}
+		
+		esteira.forEach(System.out::println);
 		
 	}
 

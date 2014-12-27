@@ -1,6 +1,6 @@
 package br.com.unitri.aula02.exercicio3;
 
-public class Produtor extends Thread {
+public class Produtor implements Runnable {
 	
 	String nome;
 	Esteira esteira;
@@ -20,13 +20,14 @@ public class Produtor extends Thread {
 	
 	@Override
 	public void run() {
-		for (int i = 0; i < quantidade; i++) {
+		for (int i = 1; i <= quantidade; i++) {
 			ColocarNaEsteira(i,nome);
 		}
 	}
 
 	private void ColocarNaEsteira(int id, String nome) {
 		Item item = criarItem(id, nome);
+		System.out.println("Item " + item + " criado...");
 		esteira.add(item);
 		
 	}
