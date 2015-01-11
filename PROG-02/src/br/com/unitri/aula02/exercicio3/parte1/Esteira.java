@@ -1,4 +1,4 @@
-package br.com.unitri.aula02.exercicio3;
+package br.com.unitri.aula02.exercicio3.parte1;
 
 import java.util.ArrayList;
 import java.util.List;

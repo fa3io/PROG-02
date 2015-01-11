@@ -1,4 +1,4 @@
-package br.com.unitri.aula02.exercicio3;
+package br.com.unitri.aula02.exercicio3.parte1;
 
 public class Consumidor implements Runnable {
 
