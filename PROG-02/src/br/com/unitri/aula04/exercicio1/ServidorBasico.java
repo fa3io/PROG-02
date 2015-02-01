@@ -11,34 +11,32 @@ public class ServidorBasico {
 		try{
 			
 			System.out.println("[Criando Servidor...]");
-			
-			ServerSocket servidor = new ServerSocket(123);
-			
-			System.out.println("Servidor Operando na porta: 123");
+			ServerSocket servidor = new ServerSocket(1234);
+			System.out.println("Servidor Operando na porta: 1234");
 			
 			
 			while(true){
 				
-				System.out.println("Aguardando Conexões.....");
+				System.out.println("Aguardando Conexoes.....");
 				
 				Socket cliente = servidor.accept();
 				
-				System.out.println("[Conexão aberta de "+ cliente.getInetAddress().toString()+ "]");
+				System.out.println("[Conexao aberta de "+ cliente.getInetAddress().toString()+ "]");
 				System.out.println("[Enviando dados ....]");
 				
 				ObjectOutputStream saida = new ObjectOutputStream(cliente.getOutputStream());
 				
-				saida.flush(); // Envia Cabeçalho de preparo  do outro endpoint 
+				saida.flush(); // Envia Cabeï¿½alho de preparo  do outro endpoint 
 				//saida.writeObject("SOH"); //Star of Header
 				
 				saida.writeObject("Servidor basico conectado");
 				saida.writeObject("Procesando Dados....");
-				saida.writeObject("Dados de conexão "+ cliente.toString());
+				saida.writeObject("Dados de conexo "+ cliente.toString());
 				saida.writeObject("Tchau!!!");
 				System.out.println("[Dados Enviados!]");
 				saida.writeObject("EOT"); // End Of Transfer
 				cliente.close();
-				System.out.println("[Conexão Encerrada!]");		
+				System.out.println("[Conexao Encerrada!]");		
 			}
 	
 		}catch(Exception erro){

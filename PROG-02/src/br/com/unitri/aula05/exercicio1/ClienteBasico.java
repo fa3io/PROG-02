@@ -1,4 +1,4 @@
-package br.com.unitri.aula04.exercicio1;
+package br.com.unitri.aula05.exercicio1;
 
 import java.io.ObjectInputStream;
 import java.net.Socket;
