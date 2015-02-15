@@ -8,10 +8,9 @@ public class EscritaBytes {
 
 	public static void main(String[] args) {
 
-		// verifica a presenca de arqgumento com nome do arquivo
+		// verifica a presenca de argumento com nome do arquivo
 		if (args.length == 0) {
-			System.out
-					.println("Uso Correto: \njava EscritaBytes <nome do arquivo> [quantidade]");
+			System.out.println("Uso Correto: \njava EscritaBytes <nome do arquivo> [quantidade]");
 			System.exit(-1);
 		}
 
@@ -33,7 +32,7 @@ public class EscritaBytes {
 		try {
 			quantidade = Integer.parseInt(args[1]);
 		} catch (Exception e) {
-			System.out.println("Usando quantidade padrão: 10");
+			System.out.println("Usando quantidade padrao: 10");
 		}
 		// Gera quantidade indicada de valores aleatorios
 

@@ -9,6 +9,10 @@ import java.io.IOException;
 public class Copia {
 
 	public static void main(String[] args) {
+		
+		System.out.println("0 = " + args[0]);
+		System.out.println("1 = " + args[1]);
+		
 		copiaArquivo(args[0], args[1]);
 
 	}
@@ -38,7 +42,7 @@ public class Copia {
 			
 			
 		} catch (IOException e) {
-		System.out.println("Copia não foi possivel " + e);	
+		System.out.println("Copia nï¿½o foi possivel " + e);	
 		}
 		
 	}

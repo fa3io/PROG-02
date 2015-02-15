@@ -15,7 +15,7 @@ public class SomadorDeAreas {
 			soma += array[i].area();
 		}
 		
-		System.out.println(soma);
+		System.out.println("Area total de elemento do array: " + soma);
 	}
 	
 	

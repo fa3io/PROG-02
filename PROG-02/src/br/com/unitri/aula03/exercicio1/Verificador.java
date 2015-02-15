@@ -13,14 +13,14 @@ public class Verificador {
 		//Carrega file (Arquivo ou caminho)
 		File file = new File(args[0]);
 		
-		//Verifica se é valido
+		//Verifica se ï¿½ valido
 		if(file.exists()){
 			
-			//Verifica se é Arquivo
+			//Verifica se ï¿½ Arquivo
 			if(file.isFile()){
 				listaArquivo(file);
 			}
-			//Verifica se é diretorio
+			//Verifica se ï¿½ diretorio
 			if (file.isDirectory()) {
 				listarDiretorio(file);
 			}
@@ -28,7 +28,7 @@ public class Verificador {
 			
 			
 		}else{
-			System.out.println("Arquivo informado não existe !!!");
+			System.out.println("Arquivo informado nao existe !!!");
 			System.out.println(file);
 		}
 		
@@ -38,7 +38,7 @@ public class Verificador {
 
 	private static void listarDiretorio(File file) {
 		File[] files = file.listFiles();
-		long totalBytes =0;
+		long totalBytes = 0;
 		Formatador f = new Formatador();
 		System.out.println("Diretorio: " + file);
 		for (int i = 0; i < files.length; i++) {
@@ -60,11 +60,11 @@ public class Verificador {
 		System.out.println("=================================");
 		System.out.println("Arquivo: "+ file);
 		System.out.println("Nome do arquivo: "+ file.getName());
-		System.out.println("Ultima data de modificação: "+ f.formataData(file.lastModified()));
+		System.out.println("Ultima data de modificaï¿½ï¿½o: "+ f.formataData(file.lastModified()));
 		System.out.println("Tamanho em bytes: "+ f.formataBytes(file.length()));
-		System.out.println("Leitura: " + (file.canRead()? "Sim":"Não"));
-		System.out.println("Gravação: " + (file.canWrite()? "Sim":"Não"));
-		System.out.println("Oculto: " + (file.isHidden()? "Sim":"Não")); 
+		System.out.println("Leitura: " + (file.canRead()? "Sim":"Nï¿½o"));
+		System.out.println("Gravaï¿½ï¿½o: " + (file.canWrite()? "Sim":"Nï¿½o"));
+		System.out.println("Oculto: " + (file.isHidden()? "Sim":"Nï¿½o")); 
 		System.out.println("=================================");
 	}
 

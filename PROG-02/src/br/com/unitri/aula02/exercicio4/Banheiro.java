@@ -1,6 +1,5 @@
 package br.com.unitri.aula02.exercicio4;
 
-import java.util.Random;
 
 public class Banheiro {
 	
@@ -16,28 +15,36 @@ public class Banheiro {
 	 * @throws InterruptedException 
 	 */
 
-	public void usarBanheiro() throws InterruptedException{
-		if(!ocupado){
+	public void usar() throws InterruptedException{
+		if(ocupado == false){
 			
-			
+			ocupado = true;
 			ocupante = Thread.currentThread().getName();
-			duracao = (long)(Math.random() * 10);
+			duracao = (long)(Math.random() * 10000);
 			
-		
-			System.out.println(ocupante + "usando banheiro...");
-			System.out.println(ocupante + "usando durante " + duracao + "Milisegundos..." );
+			System.out.println(ocupante + " entrou no banheiro...");
+			System.out.println(ocupante + " usando durante " + duracao + " Milisegundos..." );
+			
 			Thread.sleep(duracao);
-			desocuparBanheiro();
+			System.out.println(ocupante + " Saiu do banheiro...");
+			ocupado = false;
 			
+			synchronized (this) {
+				notifyAll();
+			}
+			
+			
+		}else{
+			
+			String proximo = Thread.currentThread().getName();
+			System.out.println(proximo + " tentou usar o banheiro, mas estah ocupado por " + ocupante);
+			
+			synchronized (this) {
+				wait();
+			}
+			
+			usar();
 		}
-		
-		
-	}
-
-	private void desocuparBanheiro() {
-		// TODO Auto-generated method stub
-		
-	}
 	
-	
+	}
 }
